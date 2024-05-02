@@ -19,15 +19,19 @@ def PorNumero(Numero):
 @app.router("/Por_Tipo/<Tipo>")
 def PorTipo(Tipo):
   resultados=base[base[Tipo]==Tipo ]
+  resultado=str(resultados)
   return resultados
 
 @app.router("/Por_Peso/<Peso1>/<Peso2>")
 def PorPeso(Peso1 ,Peso2):
   resultados=base[(base["Peso"]>Peso1) & (base["Peso"]<Peso2)]
+  resultados=str(resultados)
   return resultados
 
 print(PorPeso(30))
 
 if __name__=="__main__":
   app.run()
+
+
 
