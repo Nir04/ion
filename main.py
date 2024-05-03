@@ -13,7 +13,7 @@ def Principal():
 @app.router("/Por_Nombre/<Nombre>")
 def PorNombre(Nombre):
   base[base["Nombre"]==Nombre]
-  respuesta=f"Se llama {Nombre} es {fila.loc[:,´Nombre]}"
+  respuesta=f"Se llama {Nombre} es {fila.loc[:,Nombre]}"
   return respuesta
 
 @app.router("/Por_Edad/<Edad>")
@@ -32,4 +32,6 @@ def PorGenero(Genero):
 
 if __name__=="__main__":
   app.run()
+
+
 
